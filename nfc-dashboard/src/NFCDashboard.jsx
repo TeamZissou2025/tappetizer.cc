@@ -255,8 +255,8 @@ function SetupGuide() {
         <div style={{ width: 72, height: 72, borderRadius: 20, background: T.accentTint, margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center", color: T.accent }}>
           <Icons.nfcWaves size={32} />
         </div>
-        <h2 style={{ fontSize: 28, fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10 }}>Bridge Not Connected</h2>
-        <p style={{ color: T.textSec, fontSize: 15, maxWidth: 400, margin: "0 auto", fontFamily: F, lineHeight: 1.6 }}>
+        <h2 style={{ fontSize: 42, fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10 }}>Bridge Not Connected</h2>
+        <p style={{ color: T.textSec, fontSize: 23, maxWidth: 400, margin: "0 auto", fontFamily: F, lineHeight: 1.6 }}>
           The local bridge relays commands between this dashboard and your NFC reader.
         </p>
       </div>
@@ -265,18 +265,18 @@ function SetupGuide() {
           <div key={s.num} style={{ display: "flex", gap: 14, padding: "16px 20px", borderRadius: 18, backgroundColor: "rgba(30,30,34,0.75)", backdropFilter: "blur(12px)", boxShadow: T.shadow, animation: `popIn 0.4s ease ${i * 0.08}s both`, border: `1px solid rgba(255,255,255,0.08)` }}>
             <div style={{ width: 32, height: 32, borderRadius: 10, background: T.accentGrad, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, fontFamily: F, flexShrink: 0 }}>{s.num}</div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: T.text, marginBottom: 4, fontFamily: F }}>{s.title}</div>
+              <div style={{ fontSize: 21, fontWeight: 600, color: T.text, marginBottom: 4, fontFamily: F }}>{s.title}</div>
               {s.cmd ? (
                 <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", backgroundColor: T.accentTint, borderRadius: 10 }}>
                   <code style={{ flex: 1, color: T.accent, fontFamily: M, fontSize: 12 }}>{s.cmd}</code>
                   <button onClick={() => { navigator.clipboard.writeText(s.cmd); setCopied(true); setTimeout(() => setCopied(false), 2000); }} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid rgba(217,70,239,0.2)`, backgroundColor: "transparent", color: T.accent, fontSize: 10, fontWeight: 600, cursor: "pointer", fontFamily: F }}>{copied ? "Copied!" : "Copy"}</button>
                 </div>
-              ) : <div style={{ fontSize: 13, color: T.textSec, lineHeight: 1.5, fontFamily: F }}>{s.desc}</div>}
+              ) : <div style={{ fontSize: 20, color: T.textSec, lineHeight: 1.5, fontFamily: F }}>{s.desc}</div>}
             </div>
           </div>
         ))}
       </div>
-      <p style={{ textAlign: "center", marginTop: 28, fontSize: 11, color: T.textMuted, fontFamily: F }}>Tip: On macOS, if the reader isn't detected, you may need to disable com.apple.ifdreader</p>
+      <p style={{ textAlign: "center", marginTop: 28, fontSize: 17, color: T.textMuted, fontFamily: F }}>Tip: On macOS, if the reader isn't detected, you may need to disable com.apple.ifdreader</p>
     </div>
   );
 }
