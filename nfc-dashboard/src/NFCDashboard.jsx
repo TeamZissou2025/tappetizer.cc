@@ -250,7 +250,7 @@ function SetupGuide() {
     { num: 4, title: "Connect Reader", desc: "Plug in your ACR1252U via USB. The bridge will detect it automatically." },
   ];
   return (
-    <div style={{ maxWidth: 520, margin: "0 auto", padding: "80px 24px", animation: "popIn 0.5s ease" }}>
+    <div style={{ maxWidth: 520, margin: "0 auto", padding: "80px 24px", animation: "popIn 0.5s ease", position: "relative", zIndex: 1 }}>
       <div style={{ textAlign: "center", marginBottom: 48 }}>
         <div style={{ width: 72, height: 72, borderRadius: 20, background: T.accentTint, margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center", color: T.accent }}>
           <Icons.nfcWaves size={32} />
@@ -262,7 +262,7 @@ function SetupGuide() {
       </div>
       <div style={{ display: "grid", gap: 12 }}>
         {steps.map((s, i) => (
-          <div key={s.num} style={{ display: "flex", gap: 14, padding: "16px 20px", borderRadius: 18, backgroundColor: T.card, boxShadow: T.shadow, animation: `popIn 0.4s ease ${i * 0.08}s both`, border: `1px solid ${T.border}` }}>
+          <div key={s.num} style={{ display: "flex", gap: 14, padding: "16px 20px", borderRadius: 18, backgroundColor: "rgba(30,30,34,0.75)", backdropFilter: "blur(12px)", boxShadow: T.shadow, animation: `popIn 0.4s ease ${i * 0.08}s both`, border: `1px solid rgba(255,255,255,0.08)` }}>
             <div style={{ width: 32, height: 32, borderRadius: 10, background: T.accentGrad, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, fontFamily: F, flexShrink: 0 }}>{s.num}</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: T.text, marginBottom: 4, fontFamily: F }}>{s.title}</div>
@@ -353,7 +353,7 @@ export default function NFCDashboard() {
   const HEADER_H = 60;
 
   return (
-    <div style={{ height: "100vh", overflow: "hidden", backgroundColor: T.bg, fontFamily: F }}>
+    <div style={{ height: "100vh", overflow: "hidden", backgroundColor: bridgeStatus === "disconnected" ? "transparent" : T.bg, fontFamily: F }}>
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::selection { background: rgba(217,70,239,0.2); color: ${T.accent}; }
@@ -404,7 +404,7 @@ export default function NFCDashboard() {
 
       {/* BODY */}
       {bridgeStatus === "disconnected" && bridge.bridgeStatus === "disconnected" ? (
-        <div style={{ height: `calc(100vh - ${HEADER_H}px)`, overflow: "auto" }}><ShaderBackground /><SetupGuide /></div>
+        <div style={{ height: `calc(100vh - ${HEADER_H}px)`, overflow: "auto", position: "relative" }}><ShaderBackground /><SetupGuide /></div>
       ) : (
         <div style={{ height: `calc(100vh - ${HEADER_H}px)`, padding: "16px 20px 0", overflow: "hidden" }}>
           {!tag ? (
