@@ -243,7 +243,7 @@ function LockModal({ onConfirm, onCancel }) {
 function SetupGuide() {
   const [copied, setCopied] = useState(false);
   const steps = [
-    { num: 1, title: "Install ACS Driver", desc: "Download and install the ACR1252U driver from ACS." },
+    { num: 1, title: "Install ACS Driver", desc: <>Download and install the ACR1252U driver. <a href="https://www.acs.com.hk/en/driver/396/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/" target="_blank" rel="noopener noreferrer" style={{ color: T.accent, fontWeight: 600 }}>Download from ACS</a></> },
     { num: 2, title: "Install Node.js", desc: "macOS: brew install node \u2022 Or download from nodejs.org" },
     { num: 3, title: "Run the Bridge", cmd: "npx squircle-nfc-bridge" },
     { num: 4, title: "Connect Reader", desc: "Plug in your ACR1252U via USB. The bridge will detect it automatically." },
