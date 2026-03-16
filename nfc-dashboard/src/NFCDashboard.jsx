@@ -268,7 +268,7 @@ function SetupGuide() {
               <div style={{ fontSize: 21, fontWeight: 600, color: T.text, marginBottom: 4, fontFamily: F }}>{s.title}</div>
               {s.cmd ? (
                 <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", backgroundColor: T.accentTint, borderRadius: 10 }}>
-                  <code style={{ flex: 1, color: T.accent, fontFamily: M, fontSize: 12 }}>{s.cmd}</code>
+                  <code style={{ flex: 1, color: T.accent, fontFamily: M, fontSize: 18 }}>{s.cmd}</code>
                   <button onClick={() => { navigator.clipboard.writeText(s.cmd); setCopied(true); setTimeout(() => setCopied(false), 2000); }} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid rgba(217,70,239,0.2)`, backgroundColor: "transparent", color: T.accent, fontSize: 10, fontWeight: 600, cursor: "pointer", fontFamily: F }}>{copied ? "Copied!" : "Copy"}</button>
                 </div>
               ) : <div style={{ fontSize: 20, color: T.textSec, lineHeight: 1.5, fontFamily: F }}>{s.desc}</div>}
