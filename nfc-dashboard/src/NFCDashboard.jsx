@@ -255,7 +255,7 @@ function SetupGuide() {
         <div style={{ width: 72, height: 72, borderRadius: 20, background: T.accentTint, margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center", color: T.accent }}>
           <Icons.nfcWaves size={32} />
         </div>
-        <h2 style={{ fontSize: 42, fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10 }}>This is Tappetizer</h2>
+        <h2 style={{ fontSize: 74, fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10 }}>This is Tappetizer</h2>
         <p style={{ color: T.textSec, fontSize: 23, maxWidth: 400, margin: "0 auto", fontFamily: F, lineHeight: 1.6 }}>
           The local bridge relays commands between this dashboard and your NFC reader.
         </p>
