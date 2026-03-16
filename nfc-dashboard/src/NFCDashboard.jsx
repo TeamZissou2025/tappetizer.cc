@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useBridge } from "./useBridge.js";
+import ShaderBackground from "./ShaderBackground.jsx";
 
 // ─── SVG ICONS ────────────────────────────────────────────
 const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" };
@@ -403,7 +404,7 @@ export default function NFCDashboard() {
 
       {/* BODY */}
       {bridgeStatus === "disconnected" && bridge.bridgeStatus === "disconnected" ? (
-        <div style={{ height: `calc(100vh - ${HEADER_H}px)`, overflow: "auto" }}><SetupGuide /></div>
+        <div style={{ height: `calc(100vh - ${HEADER_H}px)`, overflow: "auto" }}><ShaderBackground /><SetupGuide /></div>
       ) : (
         <div style={{ height: `calc(100vh - ${HEADER_H}px)`, padding: "16px 20px 0", overflow: "hidden" }}>
           {!tag ? (
