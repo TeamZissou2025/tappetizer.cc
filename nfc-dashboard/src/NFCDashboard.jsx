@@ -250,17 +250,17 @@ function SetupGuide() {
     { num: 4, title: "Connect Reader", desc: "Plug in your ACR1252U via USB. The bridge will detect it automatically." },
   ];
   return (
-    <div style={{ maxWidth: 520, margin: "0 auto", padding: "80px 24px", animation: "popIn 0.5s ease", position: "relative", zIndex: 1 }}>
+    <div style={{ maxWidth: 720, margin: "0 auto", padding: "80px 24px", animation: "popIn 0.5s ease", position: "relative", zIndex: 1 }}>
       <div style={{ textAlign: "center", marginBottom: 48 }}>
         <div style={{ width: 72, height: 72, borderRadius: 20, background: T.accentTint, margin: "0 auto 20px", display: "flex", alignItems: "center", justifyContent: "center", color: T.accent }}>
           <Icons.nfcWaves size={32} />
         </div>
-        <h2 style={{ fontSize: "clamp(36px, 5vw, 74px)", fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10, whiteSpace: "nowrap" }}>This is Tappetizer</h2>
+        <h2 style={{ fontSize: "clamp(36px, 5vw, 74px)", fontWeight: 800, color: T.text, fontFamily: F, marginBottom: 10, whiteSpace: "nowrap", textAlign: "center" }}>This is Tappetizer</h2>
         <p style={{ color: T.textSec, fontSize: 23, maxWidth: 400, margin: "0 auto", fontFamily: F, lineHeight: 1.6 }}>
           The local bridge relays commands between this dashboard and your NFC reader.
         </p>
       </div>
-      <div style={{ display: "grid", gap: 12 }}>
+      <div style={{ display: "grid", gap: 12, maxWidth: 520, margin: "0 auto" }}>
         {steps.map((s, i) => (
           <div key={s.num} style={{ display: "flex", gap: 14, padding: "16px 20px", borderRadius: 18, backgroundColor: "rgba(30,30,34,0.75)", backdropFilter: "blur(12px)", boxShadow: T.shadow, animation: `popIn 0.4s ease ${i * 0.08}s both`, border: `1px solid rgba(255,255,255,0.08)` }}>
             <div style={{ width: 32, height: 32, borderRadius: 10, background: T.accentGrad, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, fontFamily: F, flexShrink: 0 }}>{s.num}</div>
