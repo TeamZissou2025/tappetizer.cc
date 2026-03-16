@@ -245,7 +245,7 @@ function SetupGuide() {
   const [copied, setCopied] = useState(false);
   const steps = [
     { num: 1, title: "Install ACS Driver", desc: <>Download and install the ACR1252U driver. <a href="https://www.acs.com.hk/en/driver/396/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/" target="_blank" rel="noopener noreferrer" style={{ color: T.accent, fontWeight: 600 }}>Download from ACS</a></> },
-    { num: 2, title: "Install Node.js", desc: "macOS: brew install node \u2022 Or download from nodejs.org" },
+    { num: 2, title: "Install Node.js", cmd: "brew install node", desc: <>Or download from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" style={{ color: T.accent, fontWeight: 600 }}>nodejs.org</a></> },
     { num: 3, title: "Run the Bridge", cmd: "npx squircle-nfc-bridge" },
     { num: 4, title: "Connect Reader", desc: "Plug in your ACR1252U via USB. The bridge will detect it automatically." },
   ];
@@ -266,12 +266,13 @@ function SetupGuide() {
             <div style={{ width: 32, height: 32, borderRadius: 10, background: T.accentGrad, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, fontFamily: F, flexShrink: 0 }}>{s.num}</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 21, fontWeight: 600, color: T.text, marginBottom: 4, fontFamily: F }}>{s.title}</div>
-              {s.cmd ? (
+              {s.cmd && (
                 <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", backgroundColor: T.accentTint, borderRadius: 10 }}>
                   <code style={{ flex: 1, color: T.accent, fontFamily: M, fontSize: 18 }}>{s.cmd}</code>
                   <button onClick={() => { navigator.clipboard.writeText(s.cmd); setCopied(true); setTimeout(() => setCopied(false), 2000); }} style={{ padding: "3px 10px", borderRadius: 6, border: `1px solid rgba(217,70,239,0.2)`, backgroundColor: "transparent", color: T.accent, fontSize: 10, fontWeight: 600, cursor: "pointer", fontFamily: F }}>{copied ? "Copied!" : "Copy"}</button>
                 </div>
-              ) : <div style={{ fontSize: 20, color: T.textSec, lineHeight: 1.5, fontFamily: F }}>{s.desc}</div>}
+              )}
+              {s.desc && <div style={{ fontSize: 20, color: T.textSec, lineHeight: 1.5, fontFamily: F, marginTop: s.cmd ? 8 : 0 }}>{s.desc}</div>}
             </div>
           </div>
         ))}
